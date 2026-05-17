@@ -48,8 +48,10 @@ PASSWORD: 12345
 # Funcionalidades del Sistema
 
 se realizo un login,
-usurio: admin
-contraseña: 123
+```java
+USUARIO: admin
+PASSWORD: 123
+```
 
 ## Módulo de Estudiantes
 
