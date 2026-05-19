@@ -103,11 +103,8 @@ servicios/     → Lógica de negocio
 ---
 
 
-# Integrantes
-
-* Michelle Dayanna Duque Marín
-* Ana Yiseth Solarte Ruiz
-* Gisela Andrade Murillo
+# Nombre 
+Michelle Dayanna Duque Marín
 
 ### Grupo: 411
 
