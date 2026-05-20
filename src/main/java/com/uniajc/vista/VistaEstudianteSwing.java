@@ -1,7 +1,7 @@
 package com.uniajc.vista;
 
 import com.uniajc.controlador.ControladorEstudiante;
-import com.uniajc.modelo.Estudiante;import com.uniajc.modelo.Estudiante;
+import com.uniajc.modelo.Estudiante;
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;

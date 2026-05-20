@@ -34,7 +34,7 @@ public class VistaDocenteSwing extends JFrame {
     private JTable tabla;
     private DefaultTableModel modelo;
 
-    private java.util.List<Docente> docentes;
+    private List<Docente> docentes;
     private Docente docenteSeleccionado;
 
     private ControladorDocente controlador;

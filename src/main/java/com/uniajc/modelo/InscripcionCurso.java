@@ -2,25 +2,52 @@ package com.uniajc.modelo;
 
 public class InscripcionCurso {
 
-    private int id_inscripcion;
-    private int id_estudiante;
-    private int id_grupo;
+    private int idInscripcion;
+    private int idEstudiante;
+    private int idGrupo;
+    private double notaFinal;
+    private String estado;
 
-    public InscripcionCurso(int id, int estudiante, int grupo) {
-        this.id_inscripcion = id;
-        this.id_estudiante = estudiante;
-        this.id_grupo = grupo;
+    public InscripcionCurso() {
     }
 
-    public int getId_inscripcion() {
-        return id_inscripcion;
+    public int getIdInscripcion() {
+        return idInscripcion;
     }
 
-    public int getId_estudiante() {
-        return id_estudiante;
+    public void setIdInscripcion(int idInscripcion) {
+        this.idInscripcion = idInscripcion;
     }
 
-    public int getId_grupo() {
-        return id_grupo;
+    public int getIdEstudiante() {
+        return idEstudiante;
+    }
+
+    public void setIdEstudiante(int idEstudiante) {
+        this.idEstudiante = idEstudiante;
+    }
+
+    public int getIdGrupo() {
+        return idGrupo;
+    }
+
+    public void setIdGrupo(int idGrupo) {
+        this.idGrupo = idGrupo;
+    }
+
+    public double getNotaFinal() {
+        return notaFinal;
+    }
+
+    public void setNotaFinal(double notaFinal) {
+        this.notaFinal = notaFinal;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

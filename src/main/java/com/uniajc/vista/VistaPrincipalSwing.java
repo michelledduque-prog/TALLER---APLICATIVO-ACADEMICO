@@ -42,6 +42,7 @@ public class VistaPrincipalSwing extends JFrame {
         btnInscripciones.setBounds(150, 340, 180, 40);
 
         // BOTÓN DOCENTES
+
         btnDocentes.addActionListener(e -> {
 
             VistaDocenteSwing docente = new VistaDocenteSwing();
@@ -50,10 +51,40 @@ public class VistaPrincipalSwing extends JFrame {
         });
 
         // BOTÓN ESTUDIANTES
+
         btnEstudiantes.addActionListener(e -> {
 
             VistaEstudianteSwing estudiante = new VistaEstudianteSwing();
             estudiante.setVisible(true);
+
+        });
+
+        // BOTÓN MATERIAS
+
+        btnMaterias.addActionListener(e -> {
+
+            VistaMateriaSwing materia = new VistaMateriaSwing();
+            materia.setVisible(true);
+
+        });
+
+        // BOTÓN GRUPOS
+
+        btnGrupos.addActionListener(e -> {
+
+            VistaGrupoSwing grupo = new VistaGrupoSwing();
+            grupo.setVisible(true);
+
+        });
+
+        // BOTÓN INSCRIPCIONES
+
+        btnInscripciones.addActionListener(e -> {
+
+            VistaInscripcionCursoSwing inscripcion =
+                    new VistaInscripcionCursoSwing();
+
+            inscripcion.setVisible(true);
 
         });
 

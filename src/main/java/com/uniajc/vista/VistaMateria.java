@@ -1,26 +1,70 @@
 package com.uniajc.vista;
 
 import com.uniajc.controlador.ControladorMateria;
-import java.util.Scanner;
 
-public class VistaMateria {
+import javax.swing.*;
+import java.awt.*;
 
-    private static final Scanner SCANNER = new Scanner(System.in);
+public class VistaMateria extends JFrame {
 
-    public void crearMateria() {
+    private JTextField txtNombreMateria;
+    private JTextField txtCreditos;
 
-        ControladorMateria c = new ControladorMateria();
+    private JButton btnGuardar;
 
-        System.out.println("=== MATERIA ===");
+    private ControladorMateria controlador;
 
-        System.out.print("Nombre: ");
-        String nombre = SCANNER.nextLine();
+    public VistaMateria() {
 
-        System.out.print("Creditos: ");
-        int creditos = SCANNER.nextInt();
+        controlador = new ControladorMateria();
 
-        c.crear(nombre, creditos);
+        setTitle("Registro Materia");
+        setSize(400, 200);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        System.out.println("Materia guardada correctamente");
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 2, 10, 10));
+
+        panel.add(new JLabel("Nombre materia:"));
+        txtNombreMateria = new JTextField();
+        panel.add(txtNombreMateria);
+
+        panel.add(new JLabel("Créditos:"));
+        txtCreditos = new JTextField();
+        panel.add(txtCreditos);
+
+        btnGuardar = new JButton("Guardar");
+        panel.add(btnGuardar);
+        panel.add(new JLabel());
+
+        add(panel);
+
+        btnGuardar.addActionListener(e -> guardarMateria());
+    }
+
+    private void guardarMateria() {
+
+        String nombreMateria = txtNombreMateria.getText();
+
+        int creditos = Integer.parseInt(
+                txtCreditos.getText()
+        );
+
+        boolean guardado = controlador.guardarMateria(
+                nombreMateria,
+                creditos
+        );
+
+        if (guardado) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Materia guardada correctamente");
+
+        } else {
+
+            JOptionPane.showMessageDialog(this,
+                    "Error al guardar materia");
+        }
     }
 }

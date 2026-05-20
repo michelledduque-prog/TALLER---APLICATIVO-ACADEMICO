@@ -8,6 +8,7 @@ public class GrupoService {
     private GrupoDao dao = new GrupoDao();
 
     public void crear(Grupo g) {
+
         dao.guardar(g);
     }
 }

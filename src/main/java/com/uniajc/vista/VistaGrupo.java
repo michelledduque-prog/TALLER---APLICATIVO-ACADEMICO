@@ -1,33 +1,88 @@
 package com.uniajc.vista;
 
 import com.uniajc.controlador.ControladorGrupo;
-import java.util.Scanner;
 
-public class VistaGrupo {
+import javax.swing.*;
+import java.awt.*;
 
-    private static final Scanner SCANNER = new Scanner(System.in);
+public class VistaGrupo extends JFrame {
 
-    public void crearGrupo() {
+    private JTextField txtIdMateria;
+    private JTextField txtIdDocente;
+    private JTextField txtAula;
+    private JTextField txtHorario;
 
-        ControladorGrupo c = new ControladorGrupo();
+    private JButton btnGuardar;
 
-        System.out.println("=== GRUPO ===");
+    private ControladorGrupo controlador;
 
-        System.out.print("ID Materia: ");
-        int idMateria = SCANNER.nextInt();
+    public VistaGrupo() {
 
-        System.out.print("ID Docente: ");
-        int idDocente = SCANNER.nextInt();
-        SCANNER.nextLine(); 
+        controlador = new ControladorGrupo();
 
-        System.out.print("Aula: ");
-        String aula = SCANNER.nextLine();
+        setTitle("Registro Grupo");
+        setSize(400, 250);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        System.out.print("Horario: ");
-        String horario = SCANNER.nextLine();
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(5, 2, 10, 10));
 
-        c.crear(idMateria, idDocente, aula, horario);
+        panel.add(new JLabel("ID Materia:"));
+        txtIdMateria = new JTextField();
+        panel.add(txtIdMateria);
 
-        System.out.println("Grupo guardado correctamente");
+        panel.add(new JLabel("ID Docente:"));
+        txtIdDocente = new JTextField();
+        panel.add(txtIdDocente);
+
+        panel.add(new JLabel("Aula:"));
+        txtAula = new JTextField();
+        panel.add(txtAula);
+
+        panel.add(new JLabel("Horario:"));
+        txtHorario = new JTextField();
+        panel.add(txtHorario);
+
+        btnGuardar = new JButton("Guardar");
+        panel.add(btnGuardar);
+        panel.add(new JLabel());
+
+        add(panel);
+
+        btnGuardar.addActionListener(e -> guardarGrupo());
+    }
+
+    private void guardarGrupo() {
+
+        int idMateria = Integer.parseInt(
+                txtIdMateria.getText()
+        );
+
+        int idDocente = Integer.parseInt(
+                txtIdDocente.getText()
+        );
+
+        String aula = txtAula.getText();
+
+        String horario = txtHorario.getText();
+
+        boolean guardado = controlador.guardarGrupo(
+                idMateria,
+                idDocente,
+                aula,
+                horario
+        );
+
+        if (guardado) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Grupo guardado correctamente");
+
+        } else {
+
+            JOptionPane.showMessageDialog(this,
+                    "Error al guardar grupo");
+        }
     }
 }
