@@ -1,3 +1,12 @@
+# Nombre 
+Michelle Dayanna Duque Marín
+
+### Grupo: 411
+
+```
+```
+
+
 # SISTEMA ACADÉMICO UNIVERSITARIO 
 
 Aplicación académica desarrollada en Java utilizando Swing para la interfaz gráfica y PostgreSQL como sistema de base de datos.
@@ -103,12 +112,5 @@ servicios/     → Lógica de negocio
 ---
 
 
-# Nombre 
-Michelle Dayanna Duque Marín
-
-### Grupo: 411
-
-```
-```
 
 
